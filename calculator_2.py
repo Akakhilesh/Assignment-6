@@ -1,14 +1,14 @@
 import tkinter as tk
 
-# 1. Setup the main window
+# 1. Seting up the main window
 root = tk.Tk()
-root.title("Full Basic Calc")
+root.title("Basic Calculator")
 
-# 2. Create the display area
+# 2. Creating the display area
 display = tk.Entry(root, width=35, borderwidth=5, font=("Arial", 12))
 display.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
 
-# 3. Define the Functions
+# 3. Defining the Functions to be used
 def button_click(char):
     current = display.get()
     display.delete(0, tk.END)
@@ -27,26 +27,20 @@ def calculate():
         display.insert(0, "Error")
 
 # 4. Create the Buttons (Numbers 0-9)
-# Row 1 (7, 8, 9)
-btn7 = tk.Button(root, text="7", padx=30, pady=20, command=lambda: button_click("7"))
-btn8 = tk.Button(root, text="8", padx=30, pady=20, command=lambda: button_click("8"))
-btn9 = tk.Button(root, text="9", padx=30, pady=20, command=lambda: button_click("9"))
-btn_div = tk.Button(root, text="/", padx=30, pady=20, command=lambda: button_click("/"))
-
-# Row 2 (4, 5, 6)
-btn4 = tk.Button(root, text="4", padx=30, pady=20, command=lambda: button_click("4"))
-btn5 = tk.Button(root, text="5", padx=30, pady=20, command=lambda: button_click("5"))
-btn6 = tk.Button(root, text="6", padx=30, pady=20, command=lambda: button_click("6"))
-btn_mult = tk.Button(root, text="*", padx=30, pady=20, command=lambda: button_click("*"))
-
-# Row 3 (1, 2, 3)
+btn0 = tk.Button(root, text="0", padx=30, pady=20, command=lambda: button_click("0"))
 btn1 = tk.Button(root, text="1", padx=30, pady=20, command=lambda: button_click("1"))
 btn2 = tk.Button(root, text="2", padx=30, pady=20, command=lambda: button_click("2"))
 btn3 = tk.Button(root, text="3", padx=30, pady=20, command=lambda: button_click("3"))
-btn_sub = tk.Button(root, text="-", padx=30, pady=20, command=lambda: button_click("-"))
+btn4 = tk.Button(root, text="4", padx=30, pady=20, command=lambda: button_click("4"))
+btn5 = tk.Button(root, text="5", padx=30, pady=20, command=lambda: button_click("5"))
+btn6 = tk.Button(root, text="6", padx=30, pady=20, command=lambda: button_click("6"))
+btn7 = tk.Button(root, text="7", padx=30, pady=20, command=lambda: button_click("7"))
+btn8 = tk.Button(root, text="8", padx=30, pady=20, command=lambda: button_click("8"))
+btn9 = tk.Button(root, text="9", padx=30, pady=20, command=lambda: button_click("9"))
 
-# Row 4 (0, Clear, Equal, Plus)
-btn0 = tk.Button(root, text="0", padx=30, pady=20, command=lambda: button_click("0"))
+btn_div = tk.Button(root, text="/", padx=30, pady=20, command=lambda: button_click("/"))
+btn_mult = tk.Button(root, text="*", padx=30, pady=20, command=lambda: button_click("*"))
+btn_sub = tk.Button(root, text="-", padx=30, pady=20, command=lambda: button_click("-"))
 btn_clear = tk.Button(root, text="C", padx=30, pady=20, command=clear_display)
 btn_equal = tk.Button(root, text="=", padx=30, pady=20, command=calculate)
 btn_add = tk.Button(root, text="+", padx=30, pady=20, command=lambda: button_click("+"))
